@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redes Sociais</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js" charset="utf-8"></script>
+</head>
+<body>
+    <header>
+        <h1>Relatório das redes sociais</h1>
+        <nav>
+            <a href="index.html">Mundo</a>
+            <a href="#">Minha escola</a>
+        </nav>
+    </header>
+    <main class="graficos-section">
+        <section id="graficos-container" class="graficos-container">
+            <!-- crie os gráficos/texto aqui -->
+        </section>
+    </main>
+    <footer>
+        <p>Desenvolvido por Ruan </p>
+    </footer>
+    <script type="module" src="graficos/informacoesGlobais.js"></script>
+    <script type="module" src="graficos/quantidadeUsuarios.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico com Chart.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        #myChart {
+            max-width: 600px;
+            margin: auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="myChart"></canvas>
+
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar', // Tipo de gráfico: bar, line, pie, etc.
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# de Votos',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Gráfico de Votos por Cor',
+                        font: {
+                            size: 20,
+                            weight: 'bold',
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
+ html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundo Estrelado</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background-color: black;
+        }
+
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            animation: twinkle 1.5s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const numStars = 100;
+
+        for (let i = 0; i < numStars; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 3 + 1; // Tamanho aleatório entre 1 e 4
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.top = `${Math.random() * 100}vh`;
+            star.style.left = `${Math.random() * 100}vw`;
+            star.style.opacity = Math.random(); // Opacidade aleatória
+            document.body.appendChild(star);
+        }
+    </script>
+</body>
+</html>

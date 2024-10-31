@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundo de Estrelas</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: black;
+            overflow: hidden;
+        }
+        .star {
+            position: absolute;
+            border-radius: 50%;
+            background-color: white;
+            animation: twinkle 1.5s infinite alternate;
+        }
+        @keyframes twinkle {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function createStar() {
+            const star = document.createElement('div');
+            const size = Math.random() * 3 + 2; // Tamanho da estrela
+            const x = Math.random() * window.innerWidth;  // Posição X
+            const y = Math.random() * window.innerHeight; // Posição Y
+            
+            star.className = 'star';
+            star.style.width = $sizepx;
+            star.style.height = $sizepx;
+            star.style.left = px;
+            star.style.top = px;
+            star.style.animationDuration = Math.random() * 1 + 0.5}s; // Animação aleatória
+
+            document.body.appendChild(star);
+
+            // Remover estrela após a animação para não ocupar memória
+            setTimeout(() => {
+                star.remove();
+            }, 1500);
+        
+
+        // Criar várias estrelas
+        setInterval(createStar, 300);
+    </script>
+</body>
+</html>
